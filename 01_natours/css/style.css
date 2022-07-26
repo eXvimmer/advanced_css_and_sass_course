@@ -1,3 +1,10 @@
+/*
+  allowed values for $breakpoint:
+  - phone
+  - tab-port (for tablets in portrait mode)
+  - tab-land (for tablets in landscape mode)
+  - big-desktop
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -47,7 +54,22 @@ html {
    * NOTE: setting font-size to 10px is bad practice. Because it might override
    * the user specififed rules. So it's better to use percentage
    */
-  font-size: 62.5%; /* 10 / 16 */
+  font-size: 62.5%; /* 1rem = 10px => 10 / 16 */
+}
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
 }
 
 body {
