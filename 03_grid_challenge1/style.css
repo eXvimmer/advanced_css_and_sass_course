@@ -1,0 +1,40 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr) 20%;
+  gap: 1rem;
+}
+.container > * {
+  background-color: #0389be;
+  color: #fff;
+  padding: 2rem;
+}
+.container .header {
+  grid-row: 1/span 1;
+  grid-column: 1/-1;
+}
+.container [class^=small-box-] {
+  grid-row: 2/span 2;
+}
+.container .sidebar {
+  grid-column: 4/span 1;
+  grid-row: 2/span 6;
+}
+.container .main {
+  grid-column: 1/-2;
+  grid-row: 4/span 4;
+}
+.container .footer {
+  grid-row: -2/span 1;
+  grid-column: 1/-1;
+}
+
+/*# sourceMappingURL=style.css.map */
