@@ -13,6 +13,11 @@
     [box-end main-start] 400px [main-end footer-start] 100px [footer-end];
   grid-template-columns: repeat(3, [col-start] 1fr [col-end]) 20% [grid-end];
   gap: 1rem;
+  grid-template-areas:
+    ".      header header ."
+    "box1   box2   box3   sidebar"
+    "main   main   main   sidebar"
+    "footer footer footer footer";
 
   & > * {
     background-color: #0389be;
@@ -21,26 +26,30 @@
   }
 
   .header {
-    grid-row: header-start / header-end;
-    grid-column: col-start 1 / grid-end;
+    grid-area: header;
   }
 
-  [class^="small-box-"] {
-    grid-row: box-start / box-end;
+  .small-box-1 {
+    grid-area: box1;
+  }
+
+  .small-box-2 {
+    grid-area: box2;
+  }
+
+  .small-box-3 {
+    grid-area: box3;
   }
 
   .sidebar {
-    grid-column: col-end 3 / grid-end;
-    grid-row: box-start / main-end;
+    grid-area: sidebar;
   }
 
   .main {
-    grid-row: main-start / main-end;
-    grid-column: col-start 1 / span 3;
+    grid-area: main;
   }
 
   .footer {
-    grid-row: footer-start / footer-end;
-    grid-column: col-start 1 / grid-end;
+    grid-area: footer;
   }
 }
